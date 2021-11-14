@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestFilesWalkFileTree {
     public static void main(String[] args) throws IOException {
-//        Files.delete(Paths.get("/home/cola/Downloads/Netty"));
+        Files.delete(Paths.get("/home/cola/Downloads/Netty"));
         Files.walkFileTree(Paths.get("/home/cola/Downloads/Netty"),new SimpleFileVisitor<Path>(){
 
             @Override
@@ -24,6 +24,8 @@ public class TestFilesWalkFileTree {
                 return super.postVisitDirectory(dir, exc);
             }
         });
+
+//        m2();
     }
 
     /*
