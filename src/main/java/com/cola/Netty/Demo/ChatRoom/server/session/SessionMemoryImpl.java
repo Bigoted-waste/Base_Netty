@@ -1,4 +1,4 @@
-package com.cola.Netty.Demo.ChatRoom.Server.session;
+package com.cola.Netty.Demo.ChatRoom.server.session;
 
 import io.netty.channel.Channel;
 

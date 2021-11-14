@@ -22,7 +22,7 @@ public class Client {
         bootstrap.handler(new ChannelInitializer<NioSocketChannel>() {
             @Override
             protected void initChannel(NioSocketChannel ch) throws Exception {
-                ch.pipeline().addLast(new StringEncoder());
+                ch.pipeline().addLast(new StringEncoder());     //StringEncoder 将String编码为ByteBuf
                 ch.pipeline().addLast(new ChannelInboundHandlerAdapter(){
                     @Override
                     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

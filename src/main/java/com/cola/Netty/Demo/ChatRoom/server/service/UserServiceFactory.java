@@ -1,4 +1,4 @@
-package com.cola.Netty.Demo.ChatRoom.Server.service;
+package com.cola.Netty.Demo.ChatRoom.server.service;
 
 public abstract class UserServiceFactory {
 
