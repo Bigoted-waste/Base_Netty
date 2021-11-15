@@ -37,8 +37,9 @@ public class RpcClientManager {
         Object o = Proxy.newProxyInstance(loader, interfaces, (proxy, method, args) -> {
             // 1. 将方法调用转换为 消息对象
             int sequenceId = SequenceIdGenerator.nextId();
+//            System.out.println("sequenceId=====>"+sequenceId);
             RpcRequestMessage message = new RpcRequestMessage(
-                    SequenceIdGenerator.nextId(),
+                    sequenceId,
                     serviceClass.getName(),
                     method.getName(),
                     method.getReturnType(),

@@ -16,11 +16,13 @@ public class RpcRequestMessageHandler extends SimpleChannelInboundHandler<RpcReq
     protected void channelRead0(ChannelHandlerContext ctx, RpcRequestMessage message) throws Exception {
         RpcResponseMessage responseMessage = new RpcResponseMessage();
         responseMessage.setSequenceId(message.getSequenceId());
+        System.out.println("setSequenceId=>>"+message.getSequenceId());
         try {
             HelloService service = (HelloService)
                     ServicesFactory.getService(Class.forName(message.getInterfaceName()));
             Method method = service.getClass().getMethod(message.getMethodName(), message.getParameterTypes());
             Object invoke = method.invoke(service, message.getParameterValue());
+            System.out.println(invoke);
             responseMessage.setReturnValue(invoke);
         } catch (Exception e) {
             e.printStackTrace();
