@@ -70,7 +70,7 @@ public class ChatServer {
                     ch.pipeline().addLast(QUIT_HANDLER);
                 }
             });
-            Channel channel = serverBootstrap.bind(8080).sync().channel();
+            Channel channel = serverBootstrap.bind(8999).sync().channel();
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
             log.error("server error", e);

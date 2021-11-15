@@ -10,6 +10,9 @@ import io.netty.buffer.ByteBufAllocator;
 import io.netty.channel.embedded.EmbeddedChannel;
 import io.netty.handler.logging.LoggingHandler;
 
+/**
+ * 测试实现序列化、反序列化的方法
+ */
 public class TestSerializer {
     public static void main(String[] args) {
         MessageCodecSharable CODEC = new MessageCodecSharable();
